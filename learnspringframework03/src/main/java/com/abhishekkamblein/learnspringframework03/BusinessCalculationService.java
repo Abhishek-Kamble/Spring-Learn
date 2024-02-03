@@ -1,5 +1,6 @@
 package com.abhishekkamblein.learnspringframework03;
 
+import jakarta.annotation.PreDestroy;
 import org.springframework.stereotype.Component;
 import java.util.Arrays;
 
@@ -11,6 +12,7 @@ public class BusinessCalculationService {
   }
 
   private DataService dataService;
+  @PreDestroy
   public int findMax(){
     return Arrays.stream(dataService.retrieveData()).max().orElse(0);
   }
