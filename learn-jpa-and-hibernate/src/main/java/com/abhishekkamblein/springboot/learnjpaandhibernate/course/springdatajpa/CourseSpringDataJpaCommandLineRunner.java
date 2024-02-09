@@ -14,13 +14,16 @@ public class CourseSpringDataJpaCommandLineRunner implements CommandLineRunner {
 
   @Override
   public void run(String... args) throws Exception {
-    repository.save(new Course(1, "Spring Tutorial new version", "Abhishek Kamble"));
-    repository.save(new Course(2, "Spring Boot Tutorial new version", "Abhishek Kamble"));
-    repository.save(new Course(3, "Microservices Tutorial new version", "Abhishek Kamble"));
-    repository.deleteById(2l);
-    System.out.println(repository.findById(1l));
-    System.out.println(repository.findById(3l));
-
-    System.out.println(repository.findAll());
+    repository.save(new Course(1, "Spring Tutorial", "Abhishek Kamble"));
+    repository.save(new Course(2, "Spring Boot Tutorial", "Abhishek Kamble"));
+    repository.save(new Course(3, "Microservices Tutorial", "Abhishek Kamble"));
+//    repository.deleteById(2l);
+//    System.out.println(repository.findById(1l));
+//    System.out.println(repository.findById(3l));
+//
+//    System.out.println(repository.findAll());
+    System.out.println(repository.count());
+//    System.out.println(repository.findByAuthor("Abhishek Kamble"));
+    System.out.println(repository.findByName("Spring Boot Tutorial"));
   }
 }
